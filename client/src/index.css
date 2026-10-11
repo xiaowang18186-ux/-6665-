@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "PingFang SC", "HarmonyOS Sans SC", "Microsoft YaHei", "Noto Sans SC", system-ui, sans-serif;
+  --font-serif: "Songti SC", "Noto Serif SC", "STSong", serif;
+
+  --color-paper: #f7f3ec;
+  --color-surface: #fffdf9;
+  --color-ink: #2a2622;
+  --color-ink-soft: #6b625a;
+  --color-line: #e6ddd0;
+  --color-brand: #b4372f;
+  --color-brand-soft: #f6e4df;
+  --color-jade: #2f7a5c;
+  --color-jade-soft: #e1efe8;
+  --color-amber: #b7791f;
+  --color-amber-soft: #f8ecd6;
+}
+
+@layer base {
+  html { background: var(--color-paper); color: var(--color-ink); font-family: var(--font-sans); -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-width: 320px; }
+  ::selection { background: var(--color-brand-soft); }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+}
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1 } 50% { opacity: .35 } }
+.animate-pulse-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .animate-pulse-dot { animation: none; } }
